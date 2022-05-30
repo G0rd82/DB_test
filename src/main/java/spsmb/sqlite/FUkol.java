@@ -9,6 +9,10 @@ package spsmb.sqlite;
 
 // Vytvořte další TableView, které bude ze stejných dat zobrazovat následující souhrn
 // po dnech: datum, průměrný věk, počet mužů, počet žen, celkový počet
+// SELECT datum, AVG(vek) as vekovy_prumer,
+// (SELECT COUNT(*) FROM Covid as C2 where pohlavi like 'M' AND C2.datum = C1.datum) as pocet_muzu,
+// (SELECT COUNT(*) FROM Covid as C2 where pohlavi like 'Z' AND C2.datum = C1.datum) as pocet_zen,
+// COUNT(*) as celkovy_pocet FROM Covid as C1 GROUP BY datum;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
